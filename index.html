@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Peitong Schmuck & Boutique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background-color: #f7f5f3;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #e5e1dd;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #b58963;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 18px 30px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.1rem;
+      margin-bottom: 14px;
+    }
+
+    .hero-text p {
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e8ded3;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-buttons {
+      margin-top: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid #b58963;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-right: 10px;
+      margin-top: 6px;
+    }
+
+    .btn-primary {
+      background: #b58963;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #b58963;
+    }
+
+    .hero-image {
+      background: linear-gradient(135deg, #e9dfd4, #f7f2ec);
+      border-radius: 18px;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #77594a;
+      text-align: center;
+      padding: 18px;
+      border: 1px solid #e1d7cf;
+    }
+
+    .hero-image p {
+      font-size: 0.95rem;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 18px 30px;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 10px;
+      border: 1px solid #ebe3dc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-image {
+      background: #f3ece6;
+      border-radius: 10px;
+      height: 180px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a6a54;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 6px;
+      flex: 1;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #b26a3b;
+    }
+
+    .tag {
+      background: #f1e6d8;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+    }
+
+    .about-text {
+      max-width: 700px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    footer {
+      border-top: 1px solid #e1dcd6;
+      padding: 16px 18px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-image {
+        order: -1;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <span>Peitong</span> Schmuck & Boutique
+      </div>
+      <nav class="nav-links">
+        <a href="#kollektion">Kollektion</a>
+        <a href="#about">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero-Bereich -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">Neue Boutique in Braunschweig</div>
+        <h1>Handverlesener Schmuck & ausgewählte Mode</h1>
+        <p>
+          Eine kleine, feine Kollektion von Schmuck und Accessoires – 
+          inspiriert von moderner Eleganz und zeitlosen Klassikern.
+        </p>
+        <p>
+          Jedes Stück wird mit viel Sorgfalt ausgewählt oder handgefertigt, 
+          um ein besonderes Einkaufserlebnis zu schaffen.
+        </p>
+        <div class="hero-buttons">
+          <a href="#kollektion" class="btn btn-primary">Kollektion ansehen</a>
+          <a href="#kontakt" class="btn btn-secondary">Kontakt & Anfrage</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <p>
+          Hier können später echte Produktfotos eingefügt werden –<br />
+          z.B. Nahaufnahmen Ihrer Schmuckstücke oder Ihres Schaufensters.
+        </p>
+      </div>
+    </section>
+
+    <!-- Kollektion -->
+    <section class="section" id="kollektion">
+      <h2>Ausgewählte Schmuckstücke</h2>
+      <p class="section-subtitle">
+        Eine kleine Auswahl meiner Kollektion – weitere Designs sind in Planung
+        und können individuell angefragt werden.
+      </p>
+
+      <div class="grid">
+        <!-- Produkt 1 -->
+        <article class="card">
+          <div class="card-image">
+            Platzhalter für Produktfoto – z.B. goldene Ohrringe
+          </div>
+          <div class="card-title">Feine goldfarbene Ohrringe</div>
+          <div class="card-desc">
+            Minimalistisches Design, ideal für den Alltag und besondere Anlässe.
+          </div>
+          <div class="card-meta">
+            <span class="price">ab 39 €</span>
+            <span class="tag">Handverlesen</span>
+          </div>
+        </article>
+
+        <!-- Produkt 2 -->
+        <article class="card">
+          <div class="card-image">
+            Platzhalter für Produktfoto – z.B. Halskette mit Anhänger
+          </div>
+          <div class="card-title">Zarte Halskette mit Anhänger</div>
+          <div class="card-desc">
+            Filigrane Kette, inspiriert von moderner asiatischer Ästhetik.
+          </div>
+          <div class="card-meta">
+            <span class="price">ab 45 €</span>
+            <span class="tag">Limitierte Stückzahl</span>
+          </div>
+        </article>
+
+        <!-- Produkt 3 -->
+        <article class="card">
+          <div class="card-image">
+            Platzhalter für Produktfoto – z.B. Armband
+          </div>
+          <div class="card-title">Elegantes Armband</div>
+          <div class="card-desc">
+            Kombiniert sich gut mit anderen Schmuckstücken und verschiedenen Outfits.
+          </div>
+          <div class="card-meta">
+            <span class="price">ab 35 €</span>
+            <span class="tag">Kleine Serie</span>
+          </div>
+        </article>
+
+        <!-- Produkt 4 -->
+        <article class="card">
+          <div class="card-image">
+            Platzhalter für Produktfoto – z.B. Schmuck-Set
+          </div>
+          <div class="card-title">Schmuck-Set: Ohrringe & Kette</div>
+          <div class="card-desc">
+            Harmonisch abgestimmtes Set – ideal als Geschenk.
+          </div>
+          <div class="card-meta">
+            <span class="price">ab 79 €</span>
+            <span class="tag">Geschenkidee</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Über mich -->
+    <section class="section" id="about">
+      <h2>Über mich</h2>
+      <div class="about-text">
+        <p>
+          Mein Mann und ich leben seit vielen Jahren in Braunschweig, wo wir beide
+          studiert und gearbeitet haben. Die Stadt ist für uns zu einer zweiten
+          Heimat geworden, und mit meiner Boutique möchte ich ein kleines, 
+          persönliches Stück davon mit anderen teilen.
+        </p>
+        <p>
+          Bereits während meines Studiums habe ich in einer Boutique gearbeitet und 
+          später Schmuck sowie handgefertigte Accessoires über Online-Plattformen verkauft.
+          Diese Erfahrung hilft mir, die Wünsche und Erwartungen der Kundschaft gut 
+          zu verstehen und ein stimmiges Sortiment zusammenzustellen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section" id="kontakt">
+      <h2>Kontakt</h2>
+      <p class="section-subtitle">
+        Bei Interesse an meinen Schmuckstücken, Kooperationen oder zur Vermietungsanfrage 
+        für das Ladenlokal können Sie mich gerne kontaktieren.
+      </p>
+      <p style="font-size:0.95rem; color:#555;">
+        E-Mail: <strong>deine.email@beispiel.de</strong><br />
+        Instagram: <strong>@dein_instagram_name</strong><br />
+        Standort: Braunschweig
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Peitong Schmuck & Boutique – Braunschweig
+  </footer>
+
+  <script>
+    // aktuelles Jahr im Footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
